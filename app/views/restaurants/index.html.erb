@@ -1,1 +1,49 @@
-<h1>All Restaurants!!</h1>
+<!-- <h2>This is the restaurant index page!!</h2> -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+
+<nav class="navbar navbar-input-group">
+  <div class="toolbar">
+    <div class="input-group-btn">
+      <div>
+        <button class="btn btn-secondary" ng-click="formHidden = !formHidden"><a>Add Restaurant</a></button>
+        <button class="btn btn-secondary" >
+          <a data-ui-sref="foodIndex">List of All Foods</a>
+        </button>
+      </div>
+      <input style="width:333px; margin: 0 auto;" type="text" class="form-control" placeholder="Search by Restaurant Name" data-ng-model="indexVM.filter_on" />
+      <button class="btn btn-default" data-ng-click="indexVM.filter_on = ''">Filter By:</button>
+      <button class="btn btn-default" data-ng-click="indexVM.filter_on = ''"><a>All</a></button>
+      <button class="btn btn-default" data-ng-click="indexVM.filter_on = 'American'"><a>American</a></button>
+      <button class="btn btn-default" data-ng-click="indexVM.filter_on = 'Tex-Mex'"><a>Tex-Mex</a></button>
+      <button class="btn btn-default" data-ng-click="indexVM.filter_on = 'Irish'"><a>Irish</a></button>
+      <button class="btn btn-default" data-ng-click="indexVM.filter_on = 'Italian'"><a>Italian</a></button>
+    </div>
+  </div>
+</nav>
+
+<div>
+  <div style="display:inline-block;">
+    <restaurant-form data-restaurant="indexVM.newRestaurant" ng-show="formHidden" ></restaurant-form>
+  </div>
+</div>
+
+<!-- <ul>
+  <% @restaurants.each do |restaurant| %>
+    <li class="cardlist">
+      <a href="/restaurants/<%= restaurant.id %>">
+        <%= restaurant.name %>
+      </a>
+    </li>
+  <% end %>
+</ul> -->
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li class="cardlist">
+      <a href="/restaurants/<%= restaurant.id %>">
+        <%= restaurant.name %>
+      </a>
+    </li>
+  <% end %>
+</ul>
