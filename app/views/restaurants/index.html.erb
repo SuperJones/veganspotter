@@ -3,29 +3,29 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
 
 <nav class="navbar navbar-input-group">
-  <div class="toolbar">
-    <div class="input-group-btn">
-      <div>
-        <button class="btn btn-secondary" ng-click="formHidden = !formHidden"><a>Add Restaurant</a></button>
-        <button class="btn btn-secondary" >
-          <a data-ui-sref="foodIndex">List of All Foods</a>
-        </button>
-      </div>
+  <!-- <div class="toolbar">
+    <div class="input-group-btn"> -->
+      <!-- <div>
+        <button class="btn btn-secondary"><a>Add Restaurant</a></button>
+        <button class="btn btn-secondary" ><a>List of All Foods</a></button>
+      </div> -->
 
       <!-- Searchbar -->
-      <input style="width:333px; margin: 0 auto;" type="text" class="form-control" placeholder="Search by Restaurant Name"
-      />
+
+        <%= form_tag restaurants_path, :method => :get, :class => "form-inline" do %>
+          <%= text_field_tag :search, params[:search], id: 'search' , autofocus: false, :placeholder => "search", :size => 30 %>
+          <%= submit_tag "Search", :name => nil, class: "btn btn-default" %>
+        <% end %>
 
 
-
-      <button class="btn btn-default" data-ng-click="indexVM.filter_on = ''">Filter By:</button>
+      <!-- <button class="btn btn-default" data-ng-click="indexVM.filter_on = ''">Filter By:</button>
       <button class="btn btn-default" data-ng-click="indexVM.filter_on = ''"><a>All</a></button>
       <button class="btn btn-default" data-ng-click="indexVM.filter_on = 'American'"><a>American</a></button>
       <button class="btn btn-default" data-ng-click="indexVM.filter_on = 'Tex-Mex'"><a>Tex-Mex</a></button>
       <button class="btn btn-default" data-ng-click="indexVM.filter_on = 'Irish'"><a>Irish</a></button>
       <button class="btn btn-default" data-ng-click="indexVM.filter_on = 'Italian'"><a>Italian</a></button>
     </div>
-  </div>
+  </div> -->
 </nav>
 
 <div>
