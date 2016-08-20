@@ -1,6 +1,12 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
+
+    @search = Restaurant.search do
+      fulltext params[:search]
+    end
+
+
   end
 
   def show

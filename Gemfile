@@ -28,6 +28,10 @@ gem 'autoprefixer-rails'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+#Adds search functionality.
+gem 'sunspot_rails'
+gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
